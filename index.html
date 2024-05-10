@@ -12,9 +12,17 @@
 </head>
 
 <body>
+    <div class="nav">
+      <h1 class="nav__title">Text Editor</h1>
+    <div></div>
+    <div class="nav__btns">
+      <button class="nav__btn clear">Clear</button>
+      <button class="nav__btn reset">Restart</button>
+      <button class="nav__btn save">Save</button>
+    </div>
+    </div>
   <div class="container">
-    <!-- <textarea class="editor"></textarea> -->
-    <x-editor class="editor"></x-editor>
+    <textarea is="x-editor" class="editor"></textarea>
     <iframe class="iframe"></iframe>
   </div>
   <script type="module" src="/main.js"></script>

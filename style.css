@@ -2,6 +2,10 @@
   --hard-black: #464852;
   --soft-black: #4F4F56;
   --white: #fff;
+	--blue: #458588;
+	--yellow: #d79921;
+	--green: #8ec07c;
+	
 
 }
 
@@ -15,25 +19,65 @@ body {
   font-family: "Roboto Mono", monospace;
 }
 
+
+.nav {
+	background-color: var(--blue);
+	color: var(--white);
+	display: flex;
+	height: 6vh;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	/* outline: 1px solid red; */
+}
+
+.nav__btns {
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	/* outline: 1px solid red; */
+	height: 100%;
+
+}
+
+.nav__btn {
+	font-size: 1em;
+	border: 0;
+	background-color: #ffffff00;
+	background-color: var(--yellow);
+	color: var(--white);
+	padding: 0.5rem;
+	border-radius: 0.8rem;
+	font-weight: bold;
+}
+
+.nav__btn:active {
+	background-color: var(--green);
+
+}
+
 .container {
 	background-color: var(--hard-black);
 	display: flex;	
 	flex-direction: row;
 	width: 100vw;
-	height: 100vh;
-	outline: 1px solid red;
+	height: 94vh;
+	/* outline: 1px solid red; */
 	gap: 1rem;
 }
 
+
 .editor {
 	background-color: var(--soft-black);
-	font-size: 1em;
+	font-size: 1.05em;
 	color: var(--white);
 	position: relative;
 	resize: none;
 	width: 50%;
 	outline: none;
-	outline: 1px solid blue;
+	/* outline: 1.5px solid var(--yellow); */
 	margin: 1rem 0 1rem 1rem;
 	overflow-y: scroll;
 }
@@ -44,6 +88,7 @@ body {
 	width: 50%;
 	margin: 1rem 1rem 1rem 0;
 	position: relative;
-	outline: 1px solid green;
+	/* outline: 1.5px solid var(--yellow); */
+	/* outline: 1px solid green; */
   overflow-y: scroll;
 }
