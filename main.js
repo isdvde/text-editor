@@ -27,8 +27,6 @@ class Editor extends HTMLTextAreaElement {
   init() { this.value = this.default_value; }
 
   set_value(val){ this.value = val; }
-
-
 }
 
 customElements.define('x-editor', Editor, {extends: 'textarea'});
@@ -43,6 +41,16 @@ let $reset = document.querySelector('.reset');
 
 function update_frame() {
   $result.srcdoc = $editor.value;
+}
+
+function download(filename, text) {
+  let el = document.createElement('a');
+  el.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  el.setAttribute('download', filename);
+  el.style.display = 'none';
+  document.body.appendChild(el);
+  el.click();
+  document.body.removeChild(el);
 }
 
 if(code) {
@@ -65,4 +73,8 @@ $reset.onclick = function() {
 $clear.onclick = function() {
   $editor.value = '';
   update_frame();
+}
+
+$save.onclick = function() {
+  download('code.txt', $editor.value);
 }
